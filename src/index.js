@@ -6,9 +6,11 @@ async function getData(location) {
 }
 
 
-let data = getData('london');
-data.then(function(response) {
-    console.log(response);
-})
-
+const search = document.getElementById("search");
+search.addEventListener("click", async () => {
+    const locationInput = document.getElementById("location");
+    let location = locationInput.value;
+    const data = await getData(location);
+    console.log(data);
+});
 
